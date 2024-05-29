@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+}
+
+#game-container {
+    text-align: center;
+}
+
+#game-board {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-areas:
+        "ai-top ai-top ai-top"
+        "ai-left player ai-right";
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.player-hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.ai-hand-top {
+    grid-area: ai-top;
+    flex-direction: row;
+}
+
+.ai-hand-left {
+    grid-area: ai-left;
+    flex-direction: column;
+}
+
+.ai-hand-right {
+    grid-area: ai-right;
+    flex-direction: column;
+}
+
+.player-hand-bottom {
+    grid-area: player;
+    flex-direction: row;
+}
+
+.tile {
+    width: 50px;
+    height: 70px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin: 2px;
+}
+
+.ai-hand-top .tile {
+    transform: rotate(0deg);
+}
+
+.ai-hand-left .tile {
+    transform: rotate(90deg);
+}
+
+.ai-hand-right .tile {
+    transform: rotate(90deg);
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#draw-button, #discard-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
